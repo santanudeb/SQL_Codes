@@ -1,6 +1,6 @@
 xxx==============================================================================================================xxx
 
-Table 1 Query: (For creating basic employee demographics)
+Table 1 Query: [Notes - For creating basic employee demographics]
 
 Create Table EmployeeDemographics 
 (EmployeeID int, 
@@ -10,7 +10,7 @@ Age int,
 Gender varchar(50)
 )
 
-Table 1 Insert: (Adding values to the table)
+Table 1 Insert: [Notes - Adding values to the table]
 
 Insert into EmployeeDemographics VALUES
 (1001, 'Jim', 'Halpert', 30, 'Male'),
@@ -25,7 +25,7 @@ Insert into EmployeeDemographics VALUES
 
 xxx==============================================================================================================xxx
 
-Table 2 Query: (For creating basic employee salary)
+Table 2 Query: [Notes - For creating basic employee salary]
 
 Create Table EmployeeSalary 
 (EmployeeID int, 
@@ -33,7 +33,7 @@ JobTitle varchar(50),
 Salary int
 )
 
-Table 2 Insert: (Adding values to the table)
+Table 2 Insert: [Notes - Adding values to the table]
 
 Insert Into EmployeeSalary VALUES
 (1001, 'Salesman', 45000),
