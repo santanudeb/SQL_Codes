@@ -1,0 +1,19 @@
+xxx==============================================================================================================xxx
+
+[Notes - SQL Queries to view all data from a table]
+
+SELECT * FROM EmployeeDemographics
+SELECT * FROM EmployeeSalary
+
+xxx==============================================================================================================xxx
+
+[Notes - SQL Queries to view top 1000 data from a table]
+
+SELECT TOP (1000) [EmployeeID]
+      ,[FirstName]
+      ,[LastName]
+      ,[Age]
+      ,[Gender]
+  FROM [SQLTest].[dbo].[EmployeeDemographics]
+
+xxx==============================================================================================================xxx
