@@ -6,3 +6,43 @@ SELECT * FROM EmployeeDemographics
 INNER JOIN EmployeeSalary 
  ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
 ;
+
+xxx==============================================================================================================xxx
+
+[Notes - For joining two table with common row, here it's EmployeeID]
+
+SELECT * FROM EmployeeDemographics AS DEM
+INNER JOIN EmployeeSalary AS EMS
+ ON DEM.EmployeeID = EMS.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Notes - For joining two table with common row, here it's EmployeeID]
+
+SELECT * 
+FROM EmployeeDemographics AS DEM
+INNER JOIN EmployeeSalary AS EMS
+ ON DEM.EmployeeID = EMS.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Notes - RIGHT JOIN is taking everything from right table and matching it with the left table]
+
+SELECT * 
+FROM EmployeeDemographics AS DEM
+RIGHT JOIN EmployeeSalary AS EMS
+ ON DEM.EmployeeID = EMS.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Notes - LEFT JOIN is taking everything from left table and matching it with the left table]
+
+SELECT * 
+FROM EmployeeDemographics AS DEM
+LEFT JOIN EmployeeSalary AS EMS
+ ON DEM.EmployeeID = EMS.EmployeeID
+;
+
