@@ -17,3 +17,9 @@ SELECT TOP (1000) [EmployeeID]
   FROM [SQLTest].[dbo].[EmployeeDemographics]
 
 xxx==============================================================================================================xxx
+
+[Notes - For viewing two table with specific row, here it's EmployeeID, Age, Gender]
+
+SELECT DEM.EmployeeID, Age, Gender
+FROM EmployeeDemographics AS DEM
+;
