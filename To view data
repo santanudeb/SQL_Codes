@@ -10,6 +10,19 @@ SELECT COUNT(LastName) FROM EmployeeDemographics
 SELECT MAX(Salary) FROM EmployeeSalary
 SELECT MIN(Salary) FROM EmployeeSalary
 SELECT AVG(Salary) FROM EmployeeSalary
+SELECT * FROM EmployeeDemographics WHERE FirstName = 'Jim'
+SELECT * FROM EmployeeDemographics WHERE FirstName <> 'Jim'
+SELECT * FROM EmployeeDemographics WHERE AGE >= 30
+SELECT * FROM EmployeeDemographics WHERE AGE <= 30
+SELECT * FROM EmployeeDemographics WHERE AGE <> 30
+SELECT * FROM EmployeeDemographics WHERE AGE = 30
+SELECT * FROM EmployeeDemographics WHERE AGE >= 30 AND Gender = 'Male'
+SELECT * FROM EmployeeDemographics WHERE AGE >= 30 OR Gender = 'Male'
+SELECT * FROM EmployeeDemographics WHERE FirstName LIKE 'S%' [Notes - First name start with 'S']
+SELECT * FROM EmployeeDemographics WHERE FirstName LIKE 's%a%' [Notes - First which contains 's' & 'a']
+SELECT * FROM EmployeeDemographics WHERE FirstName is NULL
+SELECT * FROM EmployeeDemographics WHERE FirstName is NOT NULL
+SELECT * FROM EmployeeDemographics WHERE FirstName IN ('Jim','Pam')
 
 xxx==============================================================================================================xxx
 
