@@ -4,6 +4,12 @@ xxx=============================================================================
 
 SELECT * FROM EmployeeDemographics
 SELECT * FROM EmployeeSalary
+SELECT TOP 5 * FROM EmployeeDemographics
+SELECT DISTINCT(GENDER) FROM EmployeeDemographics
+SELECT COUNT(LastName) FROM EmployeeDemographics
+SELECT MAX(Salary) FROM EmployeeSalary
+SELECT MIN(Salary) FROM EmployeeSalary
+SELECT AVG(Salary) FROM EmployeeSalary
 
 xxx==============================================================================================================xxx
 
