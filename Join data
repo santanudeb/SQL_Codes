@@ -20,7 +20,7 @@ xxx=============================================================================
 
 [Notes - For joining two table with common row, here it's EmployeeID]
 
-SELECT * 
+SELECT DEM.Age, Gender, Salary 
 FROM EmployeeDemographics AS DEM
 INNER JOIN EmployeeSalary AS EMS
  ON DEM.EmployeeID = EMS.EmployeeID
@@ -44,5 +44,28 @@ SELECT *
 FROM EmployeeDemographics AS DEM
 LEFT JOIN EmployeeSalary AS EMS
  ON DEM.EmployeeID = EMS.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Notes - LEFT JOIN is taking everything from left table and matching it with the left table]
+
+SELECT * 
+FROM EmployeeSalary AS emp1
+JOIN EmployeeSalary AS emp2
+ ON emp1.EmployeeID + 1 = emp2.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Notes - LEFT JOIN is taking everything from left table and matching it with the left table]
+
+SELECT emp1.EmployeeID as emp_santa, 
+emp1.FirstName as FirstName_santa, 
+emp2.EmployeeID as emp_santa, 
+emp2.FirstName as FirstName_santa
+FROM EmployeeDemographics AS emp1
+JOIN EmployeeDemographics AS emp2
+ ON emp1.EmployeeID + 1 = emp2.EmployeeID
 ;
 
