@@ -1,0 +1,55 @@
+xxx==============================================================================================================xxx
+
+[Notes - For viewing two table with specific row, here it's EmployeeID, Age, Gender]
+
+SELECT FirstName
+FROM EmployeeDemographics
+UNION 
+SELECT JobTitle
+FROM EmployeeSalary 
+;
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName
+FROM EmployeeDemographics
+UNION ALL
+SELECT JobTitle
+FROM EmployeeSalary 
+;
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName, LastName, 'Old' as Label
+FROM EmployeeDemographics
+WHERE AGE > 30 
+;
+
+xxx==============================================================================================================xxx
+
+SELECT EmployeeID, 'Old' as Label
+FROM EmployeeDemographics
+WHERE AGE > 30 
+UNION
+SELECT EmployeeID, 'Highly Paid' as Label
+FROM EmployeeSalary
+WHERE Salary > 40000 
+;
+
+xxx==============================================================================================================xxx
+
+SELECT EmployeeID, 'Old Man' as Label
+FROM EmployeeDemographics
+WHERE AGE > 30 AND Gender = 'Male'
+UNION
+SELECT EmployeeID, 'Old Woman' as Label
+FROM EmployeeDemographics
+WHERE AGE > 30 AND Gender = 'FeMale'
+UNION
+SELECT EmployeeID, 'Highly Paid' as Label
+FROM EmployeeSalary
+WHERE Salary > 40000 
+ORDER BY EmployeeID
+;
+
+xxx==============================================================================================================xxx
