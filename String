@@ -1,0 +1,63 @@
+xxx==============================================================================================================xxx
+
+SELECT LENGTH('Test') [For MySQL] 
+SELECT LEN('Test') [For SQL] 
+SELECT UPPER('Test')
+SELECT LOWER('Test')
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName, LEN(FirstName)
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName, LEN(FirstName)
+FROM EmployeeDemographics
+ORDER BY 2
+;
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName, UPPER(FirstName) AS Upper
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT TRIM('    Test   ')
+SELECT LTRIM('    Test   ')
+SELECT RTRIM('    Test   ')
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName,
+LEFT (FirstName, 4),
+RIGHT (FirstName, 4),
+SUBSTRING (FirstName, 3, 2) AS From3rd
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT FirstName, REPLACE(FirstName, 'a', 'x')
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT LOCATE ('a', 'Santanu'); [For MySQL] 
+SELECT CHARINDEX ('a', 'Santanu'); [For SQL] 
+
+SELECT FirstName, CHARINDEX ('a', FirstName)
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT CONCAT (FirstName, ' ', LastName)
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
