@@ -1,0 +1,30 @@
+xxx==============================================================================================================xxx
+
+SELECT * 
+FROM EmployeeDemographics
+WHERE EmployeeID IN
+ (SELECT EmployeeID
+  FROM EmployeeSalary
+   WHERE JobTitle = 'Accountant')
+;
+
+xxx==============================================================================================================xxx
+
+SELECT JobTitle,
+(SELECT AVG(Salary)
+FROM EmployeeSalary)
+FROM EmployeeSalary
+;
+
+xxx==============================================================================================================xxx
+
+SELECT AVG(avg_age), AVG(min_age), AVG(max_age)
+FROM 
+(SELECT Gender,
+ AVG(Age) AS avg_age,
+ MIN(Age) AS min_age,
+ MAX(Age) AS max_age,
+ COUNT(Age) AS count_age
+ FROM EmployeeDemographics
+ GROUP BY Gender) AS age_table
+;
