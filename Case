@@ -1,0 +1,25 @@
+xxx==============================================================================================================xxx
+
+SELECT FirstName, age,
+CASE
+ WHEN AGE < 30 THEN 'Young'
+ WHEN AGE >= 30 THEN 'Old'
+END
+AS Age Label
+FROM EmployeeDemographics
+;
+
+xxx==============================================================================================================xxx
+
+SELECT EmployeeID, Salary,
+CASE
+ WHEN Salary < 40000 THEN Salary * 1.05
+ WHEN Salary >= 40000 THEN Salary * 1.07
+END
+AS NewSalary,
+CASE
+ WHEN JobTitle = 'Accountant' THEN Salary * .10
+END
+AS Bonus
+FROM EmployeeSalary
+;
