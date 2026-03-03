@@ -1,0 +1,64 @@
+xxx==============================================================================================================xxx
+
+SELECT dem.FirstName, Gender, AVG(Salary) OVER(PARTITION BY Gender)
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+SELECT dem.FirstName, Gender, SUM(Salary) OVER(PARTITION BY Gender)
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+[Rolling total increases with next group by value]
+
+SELECT dem.FirstName, Gender, Salary,
+SUM(Salary) OVER(PARTITION BY Gender ORDER BY dem.EmployeeID) as Rolling_Total
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+SELECT dem.EmployeeID, dem.FirstName, Gender, Salary,
+ROW_NUMBER() OVER(PARTITION BY Gender)
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+SELECT dem.EmployeeID, dem.FirstName, Gender, Salary,
+ROW_NUMBER() OVER(PARTITION BY Gender ORDER BY Salary DESC) as row_num
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+SELECT dem.EmployeeID, dem.FirstName, Gender, Salary,
+RANK() OVER(PARTITION BY Gender ORDER BY Salary DESC) as rank_num
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
+
+SELECT dem.EmployeeID, dem.FirstName, Gender, Salary,
+DENSE_RANK() OVER(PARTITION BY Gender ORDER BY Salary DESC) as dense_rank_num
+FROM EmployeeDemographics AS dem
+JOIN EmployeeSalary as sal
+ ON dem.EmployeeID = sal.EmployeeID
+;
+
+xxx==============================================================================================================xxx
