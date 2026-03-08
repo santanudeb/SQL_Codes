@@ -1,0 +1,40 @@
+xxx==============================================================================================================xxx
+
+[TEMPORARY TABLE for MySql]
+
+CREATE TEMPORARY TABLE temp_table
+(EmployeeID int, 
+FirstName varchar(50), 
+LastName varchar(50)
+);
+
+SELECT * FROM temp_table
+
+xxx==============================================================================================================xxx
+
+[TEMPORARY TABLE for Sql]
+
+CREATE TABLE #temp_table
+(
+EmployeeID int,
+FirstName varchar(50),
+LastName varchar(50)
+);
+
+xxx==============================================================================================================xxx
+
+Insert into #temp_table VALUES
+(1001, 'Jim', 'Halpert');
+
+SELECT * FROM #temp_table;
+
+xxx==============================================================================================================xxx
+
+SELECT *
+INTO #salary_over_40k
+FROM EmployeeSalary
+WHERE Salary >= 40000;
+
+SELECT * FROM #salary_over_40k;
+
+xxx==============================================================================================================xxx
