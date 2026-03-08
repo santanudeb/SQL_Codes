@@ -1,0 +1,54 @@
+xxx==============================================================================================================xxx
+
+[Example OF CTE]
+
+WITH CTE_Example as
+(
+Select AVG(Salary) avg_sal
+FROM EmployeeDemographics dem
+JOIN EmployeeSalary sal
+ ON dem.EmployeeID = sal.EmployeeID
+GROUP BY gender
+)
+SELECT AVG(avg_sal)
+FROM CTE_Example
+;
+
+xxx==============================================================================================================xxx
+
+[Example OF subquery]
+
+SELECT AVG(avg_sal)
+FROM (
+Select AVG(Salary) avg_sal
+FROM EmployeeDemographics dem
+JOIN EmployeeSalary sal
+ ON dem.EmployeeID = sal.EmployeeID
+GROUP BY gender
+) example_subquery
+;
+
+xxx==============================================================================================================xxx
+
+[Example OF 2 CTEs]
+
+WITH CTE_Example as
+(
+Select dem.EmployeeID, AVG(Salary) avg_sal
+FROM EmployeeDemographics dem
+JOIN EmployeeSalary sal
+ ON dem.EmployeeID = sal.EmployeeID
+GROUP BY dem.EmployeeID
+),
+CTE_Example2 as
+(
+SELECT EmployeeID, Salary 
+FROM EmployeeSalary 
+WHERE Salary >= 45000
+)
+SELECT *
+FROM CTE_Example
+JOIN CTE_Example2
+ ON CTE_Example.EmployeeID = CTE_Example2.EmployeeID 
+;
+
