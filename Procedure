@@ -1,0 +1,26 @@
+xxx==============================================================================================================xxx
+
+CREATE PROCEDURE large_salaries
+AS
+BEGIN
+    SELECT *
+    FROM EmployeeSalary
+    WHERE Salary >= 40000;
+END;
+
+EXEC large_salaries;
+
+xxx==============================================================================================================xxx
+
+CREATE PROCEDURE salaries_emp_id
+    @EmployeeID INT
+AS
+BEGIN
+    SELECT Salary
+    FROM EmployeeSalary
+    WHERE EmployeeID = @EmployeeID;
+END;
+
+EXEC salaries_emp_id 1001;
+
+xxx==============================================================================================================xxx
